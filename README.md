@@ -1,7 +1,7 @@
-####Description
+#### Description
 Simple example of how to integrate TornadoFx in a String Boot application.
 
-####How to build
+#### How to build
 ###### Unix
 ```bash
 ./gradlew bootRepackage
