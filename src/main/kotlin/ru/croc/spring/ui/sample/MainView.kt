@@ -3,15 +3,17 @@ package ru.croc.spring.ui.sample
 import tornadofx.*
 
 class MainView : View() {
+    // Injection of a service. Should be done like this only once because the MainView is created statically.
+    // In any other ways it's better to stick to spring autowiring via annotation (see MainService and PdfService relations)
     private val service : MainService by di()
 
     override val root = Form()
 
     private class Model {
-        var path by property<String>()
+        var path: String by property<String>()
         fun pathProperty() = getProperty(Model::path)
 
-        var jobIsDone by property<Boolean>()
+        var jobIsDone: Boolean by property<Boolean>()
         fun jobIsDoneProperty() = getProperty(Model::jobIsDone)
     }
 
