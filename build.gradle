@@ -1,7 +1,7 @@
 buildscript {
 	ext {
-		kotlinVersion = '1.1.1'
-		springBootVersion = '1.5.2.RELEASE'
+		kotlinVersion = '1.2.41'
+		springBootVersion = '2.0.1.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -11,6 +11,10 @@ buildscript {
 		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
 		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
 	}
+}
+
+plugins {
+	id "io.spring.dependency-management" version "1.0.4.RELEASE"
 }
 
 apply plugin: 'kotlin'
@@ -31,10 +35,15 @@ repositories {
 	mavenCentral()
 }
 
+dependencyManagement {
+	imports {
+		mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+	}
+}
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
-	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
+	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 	compile("no.tornado:tornadofx:1.7.1")
     compile("io.github.microutils:kotlin-logging:1.4.4")
@@ -42,3 +51,6 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
+task wrapper(type: Wrapper) {
+	gradleVersion = '4.7'
+}
