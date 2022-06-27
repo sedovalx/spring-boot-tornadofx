@@ -2,3 +2,9 @@ schemaVersion: 2.2.0
 attributes:
   space:
     editor: Idea 2022.1 Release
+components:
+  name: image-build
+  image:
+    imageName: dev-image:dev
+    dockerfile:
+      uri: docker/Dockerfile
