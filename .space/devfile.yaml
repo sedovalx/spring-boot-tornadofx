@@ -6,11 +6,6 @@ attributes:
       vmoptions:
       - '-Xmx3000m'
     instanceType: xlarge
-    warmup:
-      startOn: 
-      - type: schedule
-        cron: '0 */1 * * *'
-      script: gradlew build -x test
 components:
   - name: dev-container
     container:
