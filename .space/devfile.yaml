@@ -1,13 +1,17 @@
 schemaVersion: 2.2.0
 attributes:
   space:
-    editor: Idea 2022.1 Release
+    editor: 
+      type: Idea
+      vmoptions:
+      - '-Xmx3000m'
+    instanceType: xlarge
+    warmup:
+      startOn: 
+      - type: schedule
+        cron: '0 */1 * * *'
+      script: gradlew build -x test
 components:
-# - name: image-build
-#   image:
-#     imageName: dev-image:dev
-#     dockerfile:
-#       uri: docker/Dockerfile
   - name: dev-container
     container:
-      image: registry.jetbrains.team/p/crl/docker/nightly-dev-container:latest
+      image: 'packages.sedovalx.jetbrais.space/p/demo/my-image:latest'
