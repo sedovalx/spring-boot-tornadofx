@@ -1,4 +1,11 @@
 job("Build and push Docker") {
+    startOn {
+        gitPush {
+            pathFilter {
+                +"docker/Dockerfile"
+            }
+        }
+    }
     docker {
         build {
             context = "docker"
