@@ -9,4 +9,4 @@ attributes:
 components:
   - name: dev-container
     container:
-      image: 'packages.sedovalx.jetbrais.space/p/demo/my-image:latest'
+      image: ami-test.registry.rd-sedov-new-ami.dev.cloud.circlet.aws.intellij.net/p/project/containers/dev-container:latest
