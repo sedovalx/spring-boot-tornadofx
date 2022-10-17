@@ -7,6 +7,8 @@ attributes:
       - '-Xmx3000m'
     instanceType: regular
 components:
-  - name: dev-container
-    container:
-      image: ami-test.registry.rd-sedov-new-ami.dev.cloud.circlet.aws.intellij.net/p/project/containers/dev-container:latest
+  - name: image-build
+    imageName: dev-image:latest
+    dockerfile:
+      uri: docker/Dockerfile
+      
