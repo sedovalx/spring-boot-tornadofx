@@ -5,7 +5,7 @@ attributes:
       type: Idea
       vmoptions:
       - '-Xmx3000m'
-    instanceType: xlarge
+    instanceType: regular
 components:
   - name: dev-container
     container:
