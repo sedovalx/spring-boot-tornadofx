@@ -8,7 +8,8 @@ attributes:
     instanceType: regular
 components:
   - name: image-build
-    imageName: dev-image:latest
-    dockerfile:
-      uri: docker/Dockerfile
+    image:
+      imageName: dev-image:latest
+      dockerfile:
+        uri: docker/Dockerfile
       
