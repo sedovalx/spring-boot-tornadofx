@@ -23,3 +23,10 @@ Simple example of how to integrate TornadoFx in a String Boot application.
 - JavaFX http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
 - TornadoFX https://github.com/edvin/tornadofx
 - Gradle https://gradle.org/
+
+#### Open in JetBrains Space
+
+- Check out `.space/devfile.yaml` for the dev environment definition
+- Create a free tenant on https://jetbrains.space
+- Mirror this repository 
+- Click "Open in IDE"
